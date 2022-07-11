@@ -1,0 +1,686 @@
+<div class="container-fluid whole">
+  <div class="container pt-3">
+    <!-- topbar -->
+    <div class="container-fluid">
+      <mat-toolbar class="topnav">
+        <span
+          ><div class="emp">
+            <div class="emp-head">{{ this.totalemp }} Employees</div>
+          </div></span
+        >
+
+        <span class="removeit"
+          ><div class="status-block">
+            <div class="activeemp">{{ this.activeemp }} Active</div>
+            <div class="notactiveemp">{{ this.notactiveemp }} NotActive</div>
+          </div>
+        </span>
+        <!-- This fills the remaining space of the current row -->
+        <span class="example-fill-remaining-space removeit"></span>
+
+        <span class="px-0 mx-0">
+          <div class="search-bar justify-content-end">
+            <div class="input-field">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search"
+                [(ngModel)]="search"
+              />
+            </div>
+            <button class="search-btn" (click)="search_it()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </span>
+      </mat-toolbar>
+    </div>
+
+    <!-- search by name result-->
+    <!-- <div
+      class="container d-flex justify-content-center"
+      *ngIf="hidetop && search !== ''"
+    >
+      <div class="row mt-4">
+        <div
+          class="err-message"
+          *ngIf="(allemps | searchFilter: search) == false"
+        >
+          No results for the search {{ search }}*
+        </div>
+        <div
+          class="col-md-4 col-sm-12 mt-4 d-flex justify-content-center"
+          *ngFor="let emp of allemps | searchFilter: search; let i = index"
+        >
+          <mat-card>
+            <div class="status d-flex justify-content-end">
+              <button
+                class="notactive-btn"
+                *ngIf="emp.status == 'Not Active'"
+                mat-raised-button
+                disabled="true"
+              >
+                {{ emp.status }}
+                <div class="spinner-grow text-danger" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+              <button
+                class="active-btn"
+                *ngIf="emp.status == 'Active'"
+                mat-raised-button
+                disabled="true"
+              >
+                {{ emp.status }}
+                <div class="spinner-grow text-success" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+              <span class="viewit" (click)="openDialog(i)">
+                <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+              </span>
+            </div>
+            <mat-card-header class="">
+              <div class="row px-4 mt-5">
+                <div class="col">
+                  <div class="row justify-content-between">
+                    <div class="col">
+                      <h3>{{ emp.fname }} {{ emp.lname }}</h3>
+                    </div>
+                  </div>
+                  <div class="row justify-content-between">
+                    <div class="col">
+                      <h4>{{ emp.des }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-header>
+            <mat-card-content class="mt-4">
+              <div class="container details">
+                <div class="row mx-1">
+                  <div class="col-6 mt-3">
+                    <div class="row">
+                      <div class="col head">
+                        <p>Department</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col data">
+                        <p>{{ emp.domain }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <div class="row">
+                      <div class="col head">
+                        <p>Employee ID</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col data">
+                        <p>{{ emp.empid }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2 contact">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">
+                        <span>
+                          <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <p>{{ emp.email }}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <span>
+                          <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <p>{{ emp.phone }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="d-flex justify-content-end">
+                <span class="edit" (click)="editbtn(i)">
+                  <i class="fa-solid fa-pen"></i>
+                </span>
+                <span class="delete" (click)="deletebtn(emp._id)">
+                  <i class="fa-solid fa-circle-minus"></i>
+                </span>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div> -->
+    <div class="container pb-5" *ngIf="hidetop && search !== ''">
+      <div class="row mt-4">
+        <div
+          class="err-message"
+          *ngIf="(allemps | searchFilter: search) == false"
+        >
+          No results for the search {{ search }}*
+        </div>
+        <div
+          class="col-md-4 col-sm-12 mt-4 d-flex justify-content-center"
+          *ngFor="let emp of allemps | searchFilter: search; let i = index"
+        >
+          <mat-card class="endcard">
+            <div class="status mt-2 d-flex justify-content-end">
+              <button
+                class="notactive-btn"
+                *ngIf="emp.status == 'Not Active'"
+                mat-raised-button
+                disabled="true"
+              >
+                {{ emp.status }}
+                <div class="spinner-grow text-danger" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+              <button
+                class="active-btn"
+                *ngIf="emp.status == 'Active'"
+                mat-raised-button
+                disabled="true"
+              >
+                {{ emp.status }}
+                <div class="spinner-grow text-success" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+              <span class="viewit" (click)="openDialog(i)">
+                <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+              </span>
+            </div>
+            <mat-card-header class="">
+              <div class="row px-4 mt-4">
+                <div class="col">
+                  <div class="row justify-content-between">
+                    <div class="col">
+                      <h3>{{ emp.fname }} {{ emp.lname }}</h3>
+                    </div>
+                  </div>
+                  <div class="row justify-content-between">
+                    <div class="col">
+                      <h4>{{ emp.des }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-header>
+            <mat-card-content class="mt-5">
+              <div class="container details">
+                <div class="row">
+                  <div class="col-5 mt-3">
+                    <div class="row">
+                      <div class="col head">
+                        <p>Department</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col data">
+                        <p>{{ emp.domain }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <div class="row">
+                      <div class="col head">
+                        <p>Employee ID</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col data">
+                        <p>{{ emp.empid }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2 contact">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">
+                        <span>
+                          <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <p>{{ emp.email }}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <span>
+                          <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <p>{{ emp.phone }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="d-flex justify-content-end">
+                <span class="edit" (click)="editbtn(i)">
+                  <i class="fa-solid fa-pen"></i>
+                </span>
+                <span class="delete" (click)="deletebtn(emp._id)">
+                  <i class="fa-solid fa-circle-minus"></i>
+                </span>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <!-- search by domain -->
+    <div class="container mt-4 px-4 d-flex justify-content-end">
+      <div class="filter">
+        <div class="input-group mb-3">
+          <mat-form-field
+            class="selectit"
+            appearance="fill"
+            [hideRequiredMarker]="true"
+          >
+            <mat-label><b>DOMAIN</b></mat-label>
+            <mat-select
+              [(value)]="domain_selected"
+              required
+              aria-describedby="button-addon2"
+            >
+              <mat-option value="CDB">CDB</mat-option>
+              <mat-option value="CDE">CDE</mat-option>
+              <mat-option value="QEA">QEA</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button
+            class="btn btn-search"
+            id="button-addon2"
+            (click)="selectdomain()"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container mt-4 text d-flex justify-content-center"
+    *ngIf="this.hide"
+  >
+    <div class="mes">Select the domain</div>
+  </div>
+  <div
+    class="container my-4 text d-flex justify-content-center"
+    *ngIf="this.isselected && this.empsarr.length < 1"
+  >
+    <div class="mes">No Employees present in this domain</div>
+  </div>
+
+  <!-- cards -->
+  <div class="container mx-auto">
+    <div class="container mb-2 pb-2" *ngIf="topcard">
+      <div class="row my-3">
+        <div
+          class="col-3 cards mt-2"
+          *ngFor="let emp of empsarr; let i = index"
+        >
+          <div *ngIf="i < 4">
+            <mat-card>
+              <div class="status d-flex justify-content-end">
+                <button
+                  class="notactive-btn"
+                  *ngIf="emp.status == 'Not Active'"
+                  mat-raised-button
+                  disabled="true"
+                >
+                  {{ emp.status }}
+                  <div class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </button>
+                <button
+                  class="active-btn"
+                  *ngIf="emp.status == 'Active'"
+                  mat-raised-button
+                  disabled="true"
+                >
+                  {{ emp.status }}
+                  <div class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </button>
+                <span class="viewit" (click)="openDialog(i)">
+                  <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+                </span>
+              </div>
+              <mat-card-header class="">
+                <div class="row px-4 mt-5">
+                  <div class="col">
+                    <div class="row justify-content-between">
+                      <div class="col">
+                        <h3>{{ emp.fname }} {{ emp.lname }}</h3>
+                      </div>
+                    </div>
+                    <div class="row justify-content-between">
+                      <div class="col">
+                        <h4>{{ emp.des }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+              <mat-card-content class="mt-4">
+                <div class="container details">
+                  <div class="row mx-1">
+                    <div class="col-6 mt-3">
+                      <div class="row">
+                        <div class="col head">
+                          <p>Department</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col data">
+                          <p>{{ emp.domain }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 mt-3">
+                      <div class="row">
+                        <div class="col head">
+                          <p>Employee ID</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col data">
+                          <p>{{ emp.empid }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2 contact">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">
+                          <span>
+                            <i class="fa-solid fa-envelope"></i>
+                          </span>
+                          <p>{{ emp.email }}</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <span>
+                            <i class="fa-solid fa-phone"></i>
+                          </span>
+                          <p>{{ emp.phone }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-content>
+              <mat-card-actions>
+                <div class="d-flex justify-content-end">
+                  <span class="edit" (click)="editbtn(i)">
+                    <i class="fa-solid fa-pen"></i>
+                  </span>
+                  <span class="delete" (click)="deletebtn(emp._id)">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </span>
+                </div>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto">
+      <div class="container mb-3 pb-3" *ngIf="topcard">
+        <div class="row my-3">
+          <div
+            class="col-3 cards cards2 mt-2"
+            *ngFor="let emp of empsarr; let i = index"
+          >
+            <div *ngIf="i > 3 && i < 8">
+              <mat-card>
+                <div class="status d-flex justify-content-end">
+                  <button
+                    class="notactive-btn"
+                    *ngIf="emp.status == 'Not Active'"
+                    mat-raised-button
+                    disabled="true"
+                  >
+                    {{ emp.status }}
+                    <div class="spinner-grow text-danger" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </button>
+                  <button
+                    class="active-btn"
+                    *ngIf="emp.status == 'Active'"
+                    mat-raised-button
+                    disabled="true"
+                  >
+                    {{ emp.status }}
+                    <div class="spinner-grow text-success" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </button>
+                  <span class="viewit" (click)="openDialog(i)">
+                    <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+                  </span>
+                </div>
+                <mat-card-header class="">
+                  <div class="row px-4 mt-5">
+                    <div class="col">
+                      <div class="row justify-content-between">
+                        <div class="col">
+                          <h3>{{ emp.fname }} {{ emp.lname }}</h3>
+                        </div>
+                      </div>
+                      <div class="row justify-content-between">
+                        <div class="col">
+                          <h4>{{ emp.des }}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-card-header>
+                <mat-card-content class="mt-4">
+                  <div class="container details">
+                    <div class="row mx-1">
+                      <div class="col-6 mt-3">
+                        <div class="row">
+                          <div class="col head">
+                            <p>Department</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col data">
+                            <p>{{ emp.domain }}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mt-3">
+                        <div class="row">
+                          <div class="col head">
+                            <p>Employee ID</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col data">
+                            <p>{{ emp.empid }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-2 contact">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <span>
+                              <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <p>{{ emp.email }}</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <span>
+                              <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <p>{{ emp.phone }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <div class="d-flex justify-content-end">
+                    <span class="edit" (click)="editbtn(i)">
+                      <i class="fa-solid fa-pen"></i>
+                    </span>
+                    <span class="delete" (click)="deletebtn(emp._id)">
+                      <i class="fa-solid fa-circle-minus"></i>
+                    </span>
+                  </div>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stack -->
+  <div
+    class="container my-4"
+    *ngIf="this.isselected && this.empsarr.length > 0"
+  >
+    <div class="container pb-5">
+      <div class="row">
+        <div
+          class="col-md-4 col-sm-12 mt-4 d-flex justify-content-center"
+          *ngFor="let emp of empsarr; let i = index"
+        >
+          <mat-card class="endcard">
+            <div class="status mt-2 d-flex justify-content-end">
+              <button
+                class="notactive-btn"
+                *ngIf="emp.status == 'Not Active'"
+                mat-raised-button
+                disabled="true"
+              >
+                {{ emp.status }}
+                <div class="spinner-grow text-danger" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+              <button
+                class="active-btn"
+                *ngIf="emp.status == 'Active'"
+                mat-raised-button
+                disabled="true"
+              >
+                {{ emp.status }}
+                <div class="spinner-grow text-success" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+              <span class="viewit" (click)="openDialog(i)">
+                <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+              </span>
+            </div>
+            <mat-card-header class="">
+              <div class="row px-4 mt-4">
+                <div class="col">
+                  <div class="row justify-content-between">
+                    <div class="col">
+                      <h3>{{ emp.fname }} {{ emp.lname }}</h3>
+                    </div>
+                  </div>
+                  <div class="row justify-content-between">
+                    <div class="col">
+                      <h4>{{ emp.des }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-header>
+            <mat-card-content class="mt-5">
+              <div class="container details">
+                <div class="row">
+                  <div class="col-5 mt-3">
+                    <div class="row">
+                      <div class="col head">
+                        <p>Department</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col data">
+                        <p>{{ emp.domain }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <div class="row">
+                      <div class="col head">
+                        <p>Employee ID</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col data">
+                        <p>{{ emp.empid }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2 contact">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">
+                        <span>
+                          <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <p>{{ emp.email }}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <span>
+                          <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <p>{{ emp.phone }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="d-flex justify-content-end">
+                <span class="edit" (click)="editbtn(i)">
+                  <i class="fa-solid fa-pen"></i>
+                </span>
+                <span class="delete" (click)="deletebtn(emp._id)">
+                  <i class="fa-solid fa-circle-minus"></i>
+                </span>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

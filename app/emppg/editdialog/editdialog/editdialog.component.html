@@ -1,0 +1,726 @@
+<form [formGroup]="editGroup" (ngSubmit)="onSubmit(editGroup)">
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="First Name"
+          formControlName="fname"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="editGroup.get('fname').invalid && editGroup.get('fname').touched"
+      >
+        <div class="" *ngIf="editGroup.get('fname').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('fname').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input matInput placeholder="Middle Name" formControlName="mname" />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="editGroup.get('mname').invalid && editGroup.get('mname').touched"
+      >
+        <div class="" *ngIf="editGroup.get('mname').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Last Name"
+          formControlName="lname"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="editGroup.get('lname').invalid && editGroup.get('lname').touched"
+      >
+        <div class="" *ngIf="editGroup.get('lname').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('lname').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Father Name"
+          formControlName="father_name"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('father_name').invalid &&
+          editGroup.get('father_name').touched
+        "
+      >
+        <div class="" *ngIf="editGroup.get('father_name').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('father_name').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Mother Name"
+          formControlName="mother_name"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('mother_name').invalid &&
+          editGroup.get('mother_name').touched
+        "
+      >
+        <div class="" *ngIf="editGroup.get('mother_name').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('mother_name').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input matInput placeholder="dob" formControlName="dob" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="editGroup.get('dob').invalid && editGroup.get('dob').touched"
+      >
+        <div class="" *ngIf="editGroup.get('dob').hasError('required')">
+          This field is required*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input matInput placeholder="EmpID" formControlName="empid" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="editGroup.get('empid').invalid && editGroup.get('empid').touched"
+      >
+        <div class="" *ngIf="editGroup.get('empid').hasError('required')">
+          This field is is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('empid').hasError('pattern')">
+          Accepts Only Numbers*
+        </div>
+        <div class="" *ngIf="editGroup.get('empid').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+        <div class="" *ngIf="editGroup.get('empid').hasError('minlength')">
+          Must be atleast 7 digits*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="fields">
+        <input matInput placeholder="MailID" formControlName="email" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="editGroup.get('email').invalid && editGroup.get('email').touched"
+      >
+        <div class="" *ngIf="editGroup.get('email').hasError('required')">
+          This field is is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('email').hasError('pattern')">
+          Invalid email format*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="HR Name"
+          formControlName="hr_name"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('hr_name').invalid && editGroup.get('hr_name').touched
+        "
+      >
+        <div class="" *ngIf="editGroup.get('hr_name').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('hr_name').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('hr_name').hasError('minlength')">
+          Must contain atleast 8 characters*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="HR MailID"
+          formControlName="hr_email"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('hr_email').invalid &&
+          (editGroup.get('hr_email').dirty || editGroup.get('hr_email').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('hr_email').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('hr_email').hasError('pattern')">
+          Invalid email format*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input matInput placeholder="Role" formControlName="des" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('des').invalid &&
+          (editGroup.get('des').dirty || editGroup.get('des').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('des').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('des').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Domain"
+          formControlName="domain"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('domain').invalid &&
+          (editGroup.get('domain').dirty || editGroup.get('domain').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('domain').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('domain').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('empid').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Location"
+          formControlName="location"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('location').invalid &&
+          (editGroup.get('location').dirty || editGroup.get('location').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('location').hasError('required')">
+          This field is is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('location').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('location').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Country"
+          formControlName="country"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('country').invalid &&
+          (editGroup.get('country').dirty || editGroup.get('country').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('country').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('country').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('country').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Address Line1"
+          formControlName="aline1"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('aline1').invalid &&
+          (editGroup.get('aline1').dirty || editGroup.get('aline1').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('aline1').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('aline1').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Address Line2"
+          formControlName="aline2"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('aline2').invalid &&
+          (editGroup.get('aline2').dirty || editGroup.get('aline2').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('aline2').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('aline2').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Pincode"
+          formControlName="apincode"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('apincode').invalid &&
+          (editGroup.get('apincode').dirty || editGroup.get('apincode').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('apincode').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('apincode').hasError('pattern')">
+          Accepts Only Numbers*
+        </div>
+        <div class="" *ngIf="editGroup.get('apincode').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input matInput placeholder="State" formControlName="astate" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('astate').invalid &&
+          (editGroup.get('astate').dirty || editGroup.get('astate').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('astate').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('astate').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('astate').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Country"
+          formControlName="acountry"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('acountry').invalid &&
+          (editGroup.get('acountry').dirty || editGroup.get('acountry').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('acountry').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('acountry').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('acountry').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Address Line1"
+          formControlName="pline1"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('pline1').invalid &&
+          (editGroup.get('pline1').dirty || editGroup.get('pline1').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('pline1').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('pline1').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Address Line2"
+          formControlName="pline2"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('pline2').invalid &&
+          (editGroup.get('pline2').dirty || editGroup.get('pline2').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('pline2').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('pline2').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Pincode"
+          formControlName="ppincode"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('ppincode').invalid &&
+          (editGroup.get('ppincode').dirty || editGroup.get('ppincode').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('ppincode').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('ppincode').hasError('pattern')">
+          Accepts Only Numbers*
+        </div>
+        <div class="" *ngIf="editGroup.get('ppincode').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input matInput placeholder="State" formControlName="pstate" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('pstate').invalid &&
+          (editGroup.get('pstate').dirty || editGroup.get('pstate').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('pstate').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('pstate').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('pstate').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Country"
+          formControlName="pcountry"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('pcountry').invalid &&
+          (editGroup.get('pcountry').dirty || editGroup.get('pcountry').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('pcountry').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('pcountry').hasError('pattern')">
+          Accepts Only Alphabets*
+        </div>
+        <div class="" *ngIf="editGroup.get('pcountry').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Phone Number"
+          formControlName="phone"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('phone').invalid &&
+          (editGroup.get('phone').dirty || editGroup.get('phone').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('phone').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('phone').hasError('pattern')">
+          Accepts Only Numbers*
+        </div>
+        <div class="" *ngIf="editGroup.get('phone').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+        <div class="" *ngIf="editGroup.get('phone').hasError('minlength')">
+          Must contain atleast 10 digits*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Secondary Phone Number"
+          formControlName="altphone"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('altphone').invalid &&
+          (editGroup.get('altphone').dirty || editGroup.get('altphone').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('altphone').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('altphone').hasError('pattern')">
+          Accepts Only Numbers*
+        </div>
+        <div class="" *ngIf="editGroup.get('altphone').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+        <div class="" *ngIf="editGroup.get('altphone').hasError('minlength')">
+          Must contain atleast 10 digits*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input matInput placeholder="Class" formControlName="class" required />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('class').invalid &&
+          (editGroup.get('class').dirty || editGroup.get('class').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('class').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('class').hasError('maxlength')">
+          Exceeds Length*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Salary"
+          formControlName="salary"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('salary').invalid &&
+          (editGroup.get('salary').dirty || editGroup.get('salary').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('salary').hasError('required')">
+          This field is required*
+        </div>
+        <div class="" *ngIf="editGroup.get('salary').hasError('pattern')">
+          Accepts Only Numbers*
+        </div>
+      </mat-error>
+    </div>
+    <div class="col-4">
+      <!-- <mat-form-field class="fields">
+        <input
+          matInput
+          placeholder="Status"
+          formControlName="status"
+          required
+        />
+      </mat-form-field> -->
+      <mat-label class="mx-3">STATUS:</mat-label>
+      <br />
+      <mat-radio-group formControlName="status">
+        <mat-radio-button class="mx-3" [value]="'Active'"
+          >ACTIVE</mat-radio-button
+        >
+        <mat-radio-button [value]="'Not Active'">NOT ACTIVE</mat-radio-button>
+      </mat-radio-group>
+      <mat-error
+        class=""
+        *ngIf="
+          editGroup.get('status').invalid &&
+          (editGroup.get('status').dirty || editGroup.get('status').touched)
+        "
+      >
+        <div class="" *ngIf="editGroup.get('status').hasError('required')">
+          This field is required*
+        </div>
+      </mat-error>
+    </div>
+  </div>
+  <div class="container my-3">
+    <button
+      class="submit-btn"
+      type="submit"
+      mat-raised-button
+      [mat-dialog-close]="editGroup.value"
+    >
+      Save
+    </button>
+    <button class="cancel-btn" mat-raised-button mat-dialog-close>
+      Cancel
+    </button>
+  </div>
+</form>

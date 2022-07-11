@@ -1,0 +1,19 @@
+button {
+  height: 50px;
+  width: 110px;
+  font-size: 20px;
+}
+.success {
+  background-color: rgb(105, 215, 217);
+}
+.cancel {
+  background-color: rgb(46, 70, 94);
+}
+.success:hover {
+  background-color: rgb(130, 253, 255);
+  color: white;
+}
+.cancel:hover {
+  background-color: rgb(121, 172, 249);
+  color: white;
+}

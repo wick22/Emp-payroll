@@ -1,0 +1,88 @@
+/* .forms {
+  background-color: darkorange;
+} */
+
+.heading {
+  color: #555;
+}
+.fields {
+  width: 100%;
+  /* background-color: white; */
+}
+.whole {
+  height: max-content;
+  background-color: white;
+  /* background-image: url("../../../../assets/img/milad-fakurian-dvfph1sB-oA-unsplash.jpg"); */
+  /* background-size: cover; */
+  /* background-color: rgb(153, 210, 224); */
+}
+
+/* .forms_container {
+  margin: 10px 20px;
+} */
+.forms {
+  padding: 35px 0;
+}
+
+h2 {
+  color: #555;
+}
+h3 {
+  color: #555;
+}
+button {
+  /* color: white !important; */
+  margin: 10px 0;
+  height: 50px;
+  width: 110px;
+  font-size: 20px;
+  /* color: rgb(75, 72, 72); */
+  /* background-color: rgb(228, 214, 214); */
+}
+.submit-btn:hover {
+  background-color: rgb(130, 253, 255);
+  color: white;
+}
+.reset-btn:hover {
+  background-color: rgb(121, 172, 249);
+  color: white;
+}
+
+.aframe {
+  /* background-color: white; */
+  /* padding: 15px 0; */
+  /* background-image: url("../../../../assets/img/pawel-czerwinski-SoB70WFVWGU-unsplash.jpg");
+  background-size: cover;
+  background-position: center; */
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.6);
+}
+.bframe {
+  padding: 15px 0;
+}
+
+mat-error div {
+  margin: 0px;
+  padding-bottom: 17px;
+}
+
+hr {
+  height: 4px;
+  color: lightblue;
+}
+
+.submit-btn {
+  background-color: rgb(105, 215, 217);
+}
+.reset-btn {
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(46, 70, 94);
+}
+.topnav {
+  background-color: rgb(252, 252, 252);
+  border-radius: 7px;
+  box-shadow: rgba(40, 39, 39, 0.35) 0px 5px 15px;
+  height: 65px;
+}

@@ -1,0 +1,417 @@
+<div class="container mx-auto">
+  <div class="mt-3">
+    <h2>REGISTER NOW!!</h2>
+  </div>
+  <form [formGroup]="RegForm" (ngSubmit)="regadmin(RegForm)">
+    <div class="row mt-5">
+      <div class="row">
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="fname" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('fname').invalid &&
+              (RegForm.get('fname').dirty || RegForm.get('fname').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('fname').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('fname').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Middle Name</mat-label>
+            <input matInput formControlName="mname" />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('mname').invalid &&
+              (RegForm.get('mname').dirty || RegForm.get('mname').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('mname').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lname" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('lname').invalid &&
+              (RegForm.get('lname').dirty || RegForm.get('lname').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('lname').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('lname').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+      <!-- email pass -->
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Email ID</mat-label>
+            <input matInput formControlName="email" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="RegForm.get('email').invalid && RegForm.get('email').touched"
+          >
+            <div class="" *ngIf="RegForm.get('email').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('email').hasError('pattern')">
+              Invalid email format*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('password').invalid &&
+              (RegForm.get('password').dirty || RegForm.get('password').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('password').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('password').hasError('minlength')">
+              Must contain atleast 8 characters*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+      <!-- dob emp -->
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>D.O.B</mat-label>
+            <input matInput formControlName="dob" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="RegForm.get('dob').invalid && RegForm.get('dob').touched"
+          >
+            <div class="" *ngIf="RegForm.get('dob').hasError('required')">
+              This field is required*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Employee ID</mat-label>
+            <input matInput formControlName="empid" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="RegForm.get('empid').invalid && RegForm.get('empid').touched"
+          >
+            <div class="" *ngIf="RegForm.get('empid').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('empid').hasError('pattern')">
+              Accepts Only Numbers*
+            </div>
+            <div class="" *ngIf="RegForm.get('empid').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+            <div class="" *ngIf="RegForm.get('empid').hasError('minlength')">
+              Must be atleast 7 digits*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+      <!-- des domain -->
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Role</mat-label>
+            <input matInput formControlName="des" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="RegForm.get('des').invalid && RegForm.get('des').touched"
+          >
+            <div class="" *ngIf="RegForm.get('des').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('des').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Domain</mat-label>
+            <input matInput formControlName="domain" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('domain').invalid && RegForm.get('domain').touched
+            "
+          >
+            <div class="" *ngIf="RegForm.get('domain').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('domain').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+            <div class="" *ngIf="RegForm.get('empid').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+      <!-- hr location -->
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>HR Assigned To</mat-label>
+            <input matInput formControlName="hr" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="RegForm.get('hr').invalid && RegForm.get('hr').touched"
+          >
+            <div class="" *ngIf="RegForm.get('hr').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('hr').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+            <div class="" *ngIf="RegForm.get('hr').hasError('minlength')">
+              Must contain atleast 8 characters*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('location').invalid && RegForm.get('location').touched
+            "
+          >
+            <div class="" *ngIf="RegForm.get('location').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('location').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+            <div class="" *ngIf="RegForm.get('location').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+    </div>
+
+    <!--address -->
+    <div class="row">
+      <!-- add pin -->
+      <div class="row">
+        <div class="col-8">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Address Line</mat-label>
+            <input matInput formControlName="address" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('address').invalid &&
+              (RegForm.get('address').dirty || RegForm.get('address').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('address').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('address').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Pincode</mat-label>
+            <input matInput formControlName="pincode" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('pincode').invalid &&
+              (RegForm.get('pincode').dirty || RegForm.get('pincode').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('pincode').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('pincode').hasError('pattern')">
+              Accepts Only Numbers*
+            </div>
+            <div class="" *ngIf="RegForm.get('pincode').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+      <!-- state country-->
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('state').invalid &&
+              (RegForm.get('state').dirty || RegForm.get('state').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('state').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('state').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+            <div class="" *ngIf="RegForm.get('state').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="fields">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" required />
+          </mat-form-field>
+          <mat-error
+            class=""
+            *ngIf="
+              RegForm.get('country').invalid &&
+              (RegForm.get('country').dirty || RegForm.get('country').touched)
+            "
+          >
+            <div class="" *ngIf="RegForm.get('country').hasError('required')">
+              This field is required*
+            </div>
+            <div class="" *ngIf="RegForm.get('country').hasError('pattern')">
+              Accepts Only Alphabets*
+            </div>
+            <div class="" *ngIf="RegForm.get('country').hasError('maxlength')">
+              Exceeds Length*
+            </div>
+          </mat-error>
+        </div>
+      </div>
+    </div>
+
+    <!-- phone altphone -->
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field appearance="outline" class="fields">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phone" required />
+        </mat-form-field>
+        <mat-error
+          class=""
+          *ngIf="RegForm.get('phone').invalid && RegForm.get('phone').touched"
+        >
+          <div class="" *ngIf="RegForm.get('phone').hasError('required')">
+            This field is required*
+          </div>
+          <div class="" *ngIf="RegForm.get('phone').hasError('pattern')">
+            Accepts Only Numbers*
+          </div>
+          <div class="" *ngIf="RegForm.get('phone').hasError('maxlength')">
+            Exceeds Length*
+          </div>
+          <div class="" *ngIf="RegForm.get('phone').hasError('minlength')">
+            Must contain atleast 10 digits*
+          </div>
+        </mat-error>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="outline" class="fields">
+          <mat-label>Alternate Number</mat-label>
+          <input matInput formControlName="altphone" required />
+        </mat-form-field>
+        <mat-error
+          class=""
+          *ngIf="
+            RegForm.get('altphone').invalid && RegForm.get('altphone').touched
+          "
+        >
+          <div class="" *ngIf="RegForm.get('altphone').hasError('required')">
+            This field is required*
+          </div>
+          <div class="" *ngIf="RegForm.get('altphone').hasError('pattern')">
+            Accepts Only Numbers*
+          </div>
+          <div class="" *ngIf="RegForm.get('altphone').hasError('maxlength')">
+            Exceeds Length*
+          </div>
+          <div class="" *ngIf="RegForm.get('altphone').hasError('minlength')">
+            Must contain atleast 10 digits*
+          </div>
+        </mat-error>
+      </div>
+    </div>
+
+    <mat-error *ngIf="!RegForm.valid && this.isvalid">
+      <div class="container my-1">
+        Fields must be filled to submit successfully
+      </div>
+    </mat-error>
+
+    <mat-error *ngIf="this.iserr">
+      <div class="container my-1">{{ this.errmessage }}</div>
+    </mat-error>
+
+    <div class="container my-2">
+      <button class="submit-btn" type="submit" mat-raised-button>SignUp</button>
+      <button
+        class="cancel-btn"
+        *ngIf="!this.hide"
+        mat-raised-button
+        mat-dialog-close
+      >
+        Cancel
+      </button>
+
+      <button
+        class="re-btn"
+        *ngIf="this.hide"
+        mat-raised-button
+        [mat-dialog-close]="this.obj"
+      >
+        Created!!, Visit Page :)
+      </button>
+    </div>
+  </form>
+</div>

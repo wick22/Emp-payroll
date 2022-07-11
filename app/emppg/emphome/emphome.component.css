@@ -1,0 +1,69 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background: #eee;
+   */
+}
+
+mat-sidenav {
+  /* background-image: url("../../../assets/img/resul-mentes-DbwYNr8RPbg-unsplash.jpg") !important;
+  background-size: cover; */
+  background-color: rgba(237, 255, 255, 0.97);
+}
+
+.head {
+  font-size: 22px !important;
+  font-weight: 450 !important;
+}
+.mat-line {
+  color: white !important;
+}
+
+.navbar {
+  height: 90%;
+}
+
+.div2 {
+  background-color: rgb(138, 180, 216);
+  border-radius: 5.5px;
+}
+
+.toggle {
+  position: absolute;
+  top: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.clicked {
+  background-color: lightblue !important;
+  border-radius: 10px;
+  color: white !important;
+}
+
+.logout {
+  padding: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 450;
+}
+.div2:hover {
+  background-color: rgb(86, 202, 200);
+}
+
+.rotatedown {
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}

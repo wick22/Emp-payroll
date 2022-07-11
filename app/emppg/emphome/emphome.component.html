@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="leftside">
+      <!-- <mat-icon mat-list-icon>badge</mat-icon> -->
+      <mat-nav-list class="mt-4 navbar d-flex flex-column">
+        <div class="div1">
+          <a
+            mat-list-item
+            routerLink="dashboard"
+            (click)="dash()"
+            [ngClass]="{ clicked: dclicked == true }"
+          >
+            <span class="head">DASHBOARD</span>
+          </a>
+          <a
+            mat-list-item
+            routerLink="emps"
+            class="mt-2"
+            (click)="eview()"
+            [ngClass]="{ clicked: eclicked == true }"
+          >
+            <span class="head"> EMPLOYEES</span>
+          </a>
+          <a
+            mat-list-item
+            routerLink="addemp"
+            class="mt-2"
+            (click)="add()"
+            [ngClass]="{ clicked: aclicked == true }"
+          >
+            <span class="head">ADD EMPLOYEE</span>
+          </a>
+        </div>
+        <div class="div2">
+          <a mat-list-item (click)="openLogout()">
+            <span class="logout">LOGOUT</span>
+          </a>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet>
+        <div class="toggle" (click)="rotate()">
+          <button (click)="sidenav.toggle()">
+            <i
+              class="fa-solid fa-angles-right fa-2x"
+              [ngClass]="{ rotatedown: rotateit == true }"
+            ></i>
+            <!-- <mat-icon>keyboard_arrow_right</mat-icon> -->
+          </button>
+        </div>
+      </router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

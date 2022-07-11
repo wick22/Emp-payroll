@@ -1,0 +1,50 @@
+.demo-inline-calendar-card {
+  width: 400px;
+  height: 450px;
+  background-color: lightblue;
+  color: white;
+}
+.grid-it {
+  grid-template-columns: 3fr 1fr;
+}
+
+.whole {
+  /* background-image: url("../../../../assets/img/toa-heftiba-FV3GConVSss-unsplash.jpg");
+  background-size: cover; */
+  height: 100%;
+  /* opacity: 1; */
+  /* background-color: rgba(255, 255, 255, 0.32); */
+  /* background-blend-mode: lighten;
+   */
+  background-color: white;
+}
+
+.text {
+  color: #555;
+}
+.textp {
+  color: #555;
+}
+
+.example-card {
+  background-color: rgb(117, 145, 155);
+  color: white;
+  height: 150px;
+  width: 190px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: lightblue;
+  border: none;
+}
+
+hr {
+  height: 5px;
+  color: lightblue;
+}
+.top {
+  background-color: rgb(252, 252, 252);
+  border-radius: 7px;
+  box-shadow: rgba(40, 39, 39, 0.35) 0px 5px 15px;
+}
