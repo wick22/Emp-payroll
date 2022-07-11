@@ -1,0 +1,55 @@
+.home {
+  position: relative;
+  height: 100vh;
+  background-color: #debd91b4;
+  background-image: url("../../../assets/img/pawel-czerwinski-SoB70WFVWGU-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(68, 153, 228);
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+button:hover {
+  background-color: lightskyblue;
+}
+
+.cardit {
+  width: 30vw;
+  height: 50vh;
+  max-width: 50vw;
+  max-height: 400px;
+  min-width: 380px;
+  min-height: 350px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+.fields {
+  width: 100%;
+}
+
+.login {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-form-field {
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+mat-error div {
+  margin-top: 0px;
+  /* padding-top: 10px; */
+}

@@ -1,0 +1,131 @@
+<html>
+<body style="background-color:rgb(255, 255, 255);">
+  
+<div style="text-align: center">
+  <h1>EMPLOYEE PAYSLIP</h1>
+  <p style="color: rgb(13, 14, 13)"><b>Enter your Basic_Salary </b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Basic_Salary"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your Dearness_Allowance</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Dearness_Allowance"
+  />
+  <p style="color:rgb(13, 14, 13)"><b>Enter FBP_Allowance </b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="FBP_Allowance"
+  />
+  <p style="color:rgb(13, 14, 13)"><b>Enter your Bonus</b> </p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Bonus"
+  />
+  <p style="color:rgb(13, 14, 13)"><b>Enter your conveyance_Allowance</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="conveyance_Allowance"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your Medical_Insurance</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Medical_Insurance"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your Provident_Fund</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Provident_Fund"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your Income_Tax</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Income_Tax"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your Gross_salary</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Gross_salary"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your days</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="Paid_days"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your hours</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="hour"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your week</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="right"
+  />
+  <p style="color: rgb(13, 14, 13)"><b>Enter your year</b></p>
+  <input
+    type="number"
+    [ngStyle]="{ color: 'white', 'background-color': 'black' }"
+    name="num1"
+    [(ngModel)]="call"
+  />
+
+  <br /><br />
+
+  <button type="button" class="btn btn-primary" (click)="salary()">
+    Gross Salary
+  </button>
+  <button type="button" class="btn btn-success m-2" (click)="net()">
+    Net Salary
+  </button>
+
+  <button type="button" class="btn btn-warning m-2" (click)="day()">
+    day Salary
+  </button>
+  <button type="button" class="btn btn-info m-2" (click)="hou()">
+    hour Salary
+  </button>
+  <button type="button" class="btn btn-dark m-2" (click)="week()">
+    week Salary
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="year()">
+    year Salary CTC
+  </button>
+
+  <br />
+  <h3>Result : {{ Gross_salary }}</h3>
+  <h3>Result : {{ Net_salary }}</h3>
+
+  <h3>Result : {{ days }}</h3>
+  <h3>Result : {{ hours }}</h3>
+  <h3>Result : {{ weeks }}</h3>
+  <h3>Result : {{ years }}</h3>
+</div>
+</body>
+</html>
+

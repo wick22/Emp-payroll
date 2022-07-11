@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: "Source Code Pro", monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+  font-family: "Source Code Pro", monospace !important;
+}
+mat-label,
+mat-sidenav,
+mat-nav-list,
+mat-card,
+mat-form-field,
+mat-raised-button,
+mat-list-item,
+button {
+  font-family: "Source Code Pro", monospace !important;
+}

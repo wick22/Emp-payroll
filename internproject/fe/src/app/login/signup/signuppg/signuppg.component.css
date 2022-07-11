@@ -1,0 +1,46 @@
+.fields {
+  width: 100%;
+}
+mat-error div {
+  margin: 0px;
+  padding-bottom: 17px;
+}
+button {
+  margin: 10px 0;
+  height: 50px;
+  width: 110px;
+  font-size: 20px;
+}
+.submit-btn:hover {
+  background-color: rgb(98, 185, 225);
+  color: white;
+}
+.re-btn:hover,
+.cancel-btn:hover {
+  background-color: rgb(77, 106, 185);
+  color: white;
+}
+
+.submit-btn {
+  background-color: rgb(60, 140, 181);
+  color: white;
+}
+.cancel-btn {
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(50, 93, 168);
+}
+.re-btn {
+  color: white;
+  width: 330px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(50, 93, 168);
+  width: 250px;
+}
+
+h2 {
+  color: darkgray;
+  font-weight: bolder;
+}

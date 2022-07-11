@@ -1,0 +1,33 @@
+.fields {
+  width: 100%;
+  font-size: large;
+}
+mat-error {
+  margin: 0px;
+  padding-bottom: 17px;
+}
+
+button {
+  margin: 10px 0;
+  height: 50px;
+  width: 110px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.submit-btn:hover {
+  background-color: rgb(38, 65, 202);
+  background-color: rgb(95, 131, 207);
+  color: white;
+}
+.cancel-btn:hover {
+  background-color: rgb(234, 57, 30);
+  color: white;
+}
+
+.submit-btn {
+  background-color: rgb(95, 131, 207);
+}
+.cancel-btn {
+  margin-left: 20px;
+  background-color: indianred;
+}

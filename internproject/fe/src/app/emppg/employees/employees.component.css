@@ -1,0 +1,287 @@
+.emp-card:hover {
+  transform: scale(1.01);
+}
+
+.whole {
+  height: 100%;
+  /* background-image: url("../../../assets/img/autumn-studio-221wufG10eg-unsplash.jpg");
+  background-size: cover; */
+  background-color: rgba(255, 255, 255, 0.32);
+  background-blend-mode: darken;
+}
+
+.text {
+  color: black;
+}
+.heading {
+  color: rgb(100, 92, 190);
+}
+button {
+  color: white !important;
+  height: 50px;
+  width: 110px;
+  font-size: 20px;
+}
+
+mat-label {
+  color: rgb(121, 117, 117);
+  /* font-size: 16px; */
+  font-weight: 500;
+}
+mat-select {
+  font-size: 20px;
+  color: white;
+  /* background-color: lightblue; */
+}
+
+.status span {
+  /* margin-right: 75px; */
+  margin-top: 5px;
+}
+.notactive-btn {
+  margin-right: 20px;
+  color: rgb(223, 86, 52) !important;
+  height: 40px;
+  width: 140px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid rgb(239, 60, 60);
+  background-color: rgb(232, 187, 190) !important;
+  border-radius: 9px !important;
+}
+.active-btn {
+  margin-right: 20px;
+  color: green !important;
+  height: 40px;
+  width: 125px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid rgb(52, 199, 52);
+  background-color: rgb(205, 248, 205) !important;
+  border-radius: 9px !important;
+}
+.endcard:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+mat-card {
+  height: 454px;
+  width: 330px;
+  border-radius: 10px;
+  max-width: 400px;
+  background-color: lightblue;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
+.about {
+  margin-right: 40px;
+}
+.about h3 {
+  margin-left: 5px !important;
+}
+.details {
+  font-size: 16px;
+  font-weight: bold;
+
+  background-color: rgba(225, 220, 220);
+  border-radius: 9px;
+
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.head {
+  color: rgb(158, 191, 209);
+  font-size: 16px;
+}
+.data {
+  color: rgb(79, 79, 79);
+
+  /* color: white; */
+  font-size: 18px;
+}
+
+.head p {
+  margin-bottom: 4px;
+}
+
+.contact {
+  font-size: 18px;
+  color: rgb(60, 64, 68);
+  /* color: white; */
+}
+.contact p {
+  display: inline-block;
+}
+span {
+  margin-right: 12px;
+}
+
+mat-card-header {
+  margin: 0px !important;
+}
+
+.edit {
+  color: grey;
+}
+.delete {
+  color: red;
+}
+
+.viewit:hover,
+.edit:hover,
+.delete:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.spinner-grow {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+}
+
+.active-btn {
+  position: relative;
+}
+
+.cards2:not(:first-child) {
+  margin-left: -0.5rem !important;
+}
+
+.cards {
+  /* padding: 1.5rem;
+  box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.6); */
+  transition: 0.2s;
+}
+.cards:not(:first-child) {
+  margin-left: -1rem;
+}
+
+.cards:not(:last-child):hover,
+.cards:not(:last-child):focus-within {
+  transform: translateY(-1rem);
+}
+.cards:not(:last-child):hover ~ .cards,
+.cards:not(:last-child):focus-within ~ .cards {
+  transform: translateX(2rem);
+}
+
+.emp-head {
+  /* color: rgb(21, 20, 20); */
+  font-size: 24px;
+  font-weight: 500;
+  /* font-size: 20px; */
+  display: inline-block;
+  color: white;
+  background-color: lightblue;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px 10px;
+
+  /* padding: 5px 10px; */
+}
+
+.activeemp {
+  font-size: 20px;
+  color: white;
+  background-color: lightblue;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  margin: 0 5px;
+  width: max-content;
+}
+.notactiveemp {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  background-color: lightblue;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: max-content;
+}
+
+.selectit {
+  display: inline-block;
+  width: 100px;
+  /* background-color: lightblue; */
+  overflow: hidden;
+  color: white;
+}
+
+.mat-form-field-wrapper {
+  overflow: hidden !important;
+}
+.btn-search {
+  background-color: lightblue;
+  height: 62px;
+  width: 45px;
+}
+.text {
+  color: lightblue;
+  font-size: 20px;
+  font-weight: 500;
+}
+.mes {
+  margin-right: 55px;
+}
+.head {
+  padding: 0 !important;
+}
+
+.emp-head {
+  width: max-content;
+}
+
+.topnav {
+  background-color: rgb(252, 252, 252);
+  border-radius: 7px;
+  box-shadow: rgba(40, 39, 39, 0.35) 0px 5px 15px;
+  height: 65px;
+}
+
+.search-btn {
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.search-bar {
+  display: flex;
+  margin-right: 0;
+}
+.search-btn {
+  background-color: lightblue;
+}
+.form-control {
+  height: 50px;
+  border-color: lightblue;
+}
+
+@media (max-width: 890px) {
+  .removeit {
+    display: none;
+  }
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.err-message {
+  font-size: 18px;
+  font-weight: 500;
+  color: red;
+}

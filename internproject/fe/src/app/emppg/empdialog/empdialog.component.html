@@ -1,0 +1,244 @@
+<mat-dialog-content>
+  <div class="conatiner-fluid">
+    <div class="row">
+      <div class="col-3">
+        <img src="../../../assets/img/user.png" />
+      </div>
+      <div class="col-4">
+        <h4>{{ data.values.fname }} {{ data.values.lname }}</h4>
+        <h5>{{ data.values.empid }}</h5>
+        <p class="para">{{ data.values.des }}</p>
+        <p class="para">{{ data.values.domain }}</p>
+      </div>
+      <div class="col-5">
+        <h5>Manager: {{ data.values.hr.name }}</h5>
+      </div>
+    </div>
+    <div class="row">
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Profile">
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Personal Contact</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row conatiner-fluid">
+              <div class="col-5">
+                <h5>Primary Residence Address</h5>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.paddress.line1 }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.paddress.line2 }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.paddress.pincode }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.paddress.state }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.paddress.country }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-5">
+                <div class="row">
+                  <div class="col">
+                    <h5>Mobile No.</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>{{ data.values.phone }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h5>Alternate Mobile No.</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>{{ data.values.altphone }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Personal Data</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row conatiner-fluid">
+              <div class="col-5">
+                <h5>Current Residence Address</h5>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.address.line1 }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.address.line2 }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.address.pincode }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.address.state }}
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      {{ data.values.address.country }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-5">
+                <div class="row">
+                  <div class="col">
+                    <h5>Father Name</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>{{ data.values.father_name }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h5>Mother Name</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>{{ data.values.mother_name }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h5>D.O.B</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>{{ data.values.dob }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-tab>
+        <mat-tab label="Professional">
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Business Contact</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row">
+              <div class="col-5">
+                <h5>Employee ID</h5>
+                <p>{{ data.values.empid }}</p>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-5">
+                <h5>MailID</h5>
+                <p>{{ data.values.email }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <h5>HR Manager</h5>
+                <p>{{ data.values.hr.name }}</p>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-5">
+                <h5>MailID</h5>
+                <p>{{ data.values.hr.email }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <h5>Location</h5>
+                <p>{{ data.values.location }}</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <!-- <mat-card class="example-card my-4">
+    <mat-card-title>
+      <div class="row">
+        <div class="col">
+          <h5>JohnSon</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>JohnSon@gmail.com</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>2141511</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>HR NAME</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>Associate Dev</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>CDB</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>Chennai</h5>
+        </div>
+      </div>
+    </mat-card-title>
+  </mat-card> -->
+</mat-dialog-content>
