@@ -1,0 +1,15 @@
+img {
+  margin-top: 12px;
+  width: 90px;
+  height: 90px;
+}
+.para {
+  margin-bottom: 5px;
+}
+mat-panel-title {
+  font-size: 18px;
+  color: darkgrey;
+}
+p {
+  font-size: 18px;
+}

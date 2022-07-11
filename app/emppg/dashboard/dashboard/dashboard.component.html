@@ -1,0 +1,58 @@
+<div class="container-fluid whole">
+  <div class="d-flex justify-content-between mt-1">
+    <div class="container left text mt-4 mb-3 top">
+      <h1>Dashboard</h1>
+      <h5>Hello {{ check.fname }}, welcome back!</h5>
+    </div>
+  </div>
+  <!-- <hr /> -->
+  <div class="container">
+    <div class="row grid-it">
+      <div class="col-8">
+        <div class="row">
+          <div class="col mt-3">
+            <mat-card class="example-card">
+              <mat-card-content class="center">
+                <div class="d-flex justify-content-center">
+                  <div class="text-center mt-3">
+                    <h2>CDB</h2>
+                    <h2 id="crt">{{ cdb }}</h2>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="col mt-3">
+            <mat-card class="example-card">
+              <mat-card-content class="center">
+                <div class="d-flex justify-content-center">
+                  <div class="text-center mt-3">
+                    <h2>CDE</h2>
+                    <h2 id="crt">{{ cde }}</h2>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="col mt-3">
+            <mat-card class="example-card">
+              <mat-card-content class="center">
+                <div class="d-flex justify-content-center">
+                  <div class="text-center mt-3">
+                    <h2>QEA</h2>
+                    <h2 id="crt">{{ qea }}</h2>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 cal mt-3">
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
